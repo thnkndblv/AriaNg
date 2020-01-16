@@ -15,5 +15,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t thnkndblv/ariang:${{ github.sha }}
-        docker push thnkndblv/ariang:${{ github.sha }}
+        docker build -t thnkndblv/ariang .
+        docker push thnkndblv/ariang
