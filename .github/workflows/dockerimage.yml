@@ -17,4 +17,5 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
         docker build -t thnkndblv/ariang .
+        docker login -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }} docker.io
         docker push thnkndblv/ariang
