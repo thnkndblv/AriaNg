@@ -11,6 +11,9 @@ jobs:
     steps:
     - uses: azure/docker-login@v1
       with:
-        login-server: contoso.azurecr.io
+        login-server: registry.hub.docker.com
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
+    - run: |
+        docker build . -t thnkndblv/ariang:${{ github.sha }}
+        docker push thnkndblv/ariang:${{ github.sha }}
